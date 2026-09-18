@@ -15,7 +15,7 @@ data "aws_instance" "private" {
 
 # --- SSH Security Group ---
 resource "aws_security_group" "ssh" {
-  name        = "cmtr-7zh97qyv-ssh-sg"
+  name        = var.ssh_sg_name
   description = "Allows SSH and ICMP access from the allowed IP ranges"
   vpc_id      = var.vpc_id
 
@@ -42,7 +42,7 @@ resource "aws_security_group_rule" "ssh_icmp_ingress" {
 
 # --- Public HTTP Security Group ---
 resource "aws_security_group" "public_http" {
-  name        = "cmtr-7zh97qyv-public-http-sg"
+  name        = var.public_http_sg_name
   description = "Allows HTTP and ICMP access from the allowed IP ranges"
   vpc_id      = var.vpc_id
 
@@ -69,7 +69,7 @@ resource "aws_security_group_rule" "public_http_icmp_ingress" {
 
 # --- Private HTTP Security Group ---
 resource "aws_security_group" "private_http" {
-  name        = "cmtr-7zh97qyv-private-http-sg"
+  name        = var.private_http_sg_name
   description = "Allows HTTP and ICMP access only from the Public HTTP Security Group"
   vpc_id      = var.vpc_id
 

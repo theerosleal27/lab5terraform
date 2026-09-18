@@ -4,3 +4,7 @@ private_instance_id = "i-0b00b5d1af383ed62"
 
 # Reemplaza YOUR_PUBLIC_IP/32 por tu propia IP pública (ver instrucciones abajo)
 allowed_ip_range = ["18.153.146.156/32", "161.18.206.71/32"]
+
+ssh_sg_name          = "cmtr-7zh97qyv-ssh-sg"
+public_http_sg_name  = "cmtr-7zh97qyv-public-http-sg"
+private_http_sg_name = "cmtr-7zh97qyv-private-http-sg"
